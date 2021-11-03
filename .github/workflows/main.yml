@@ -8,7 +8,7 @@ jobs:
       - uses: actions/checkout@v2
       - id: analyze-pr-test
         uses: peterjmorgan/python-analyze-pr-python-action@master
-				with:
+        with:
           vul_threshold: 0.25
           mal_threshold: 0.25
           eng_threshold: 0.25

@@ -1,0 +1,23 @@
+on: [push]
+
+jobs:
+  test_install_phylum_job:
+    runs-on: ubuntu-latest
+    name: A job to test phylum analyze PR
+    steps:
+      - uses: actions/checkout@v2
+      - id: analyze-pr-test
+        uses: peterjmorgan/python-analyze-pr-python-action@master
+        with:
+					vul_threshold: 0.25
+					mal_threshold: 0.25
+					eng_threshold: 0.25
+					lic_threshold: 0.25
+					aut_threshold: 0.25
+          phylum_username: ${{ secrets.PHYLUM_USER }}
+          phylum_password: ${{ secrets.PHYLUM_PASS }}
+      - name: Run phylum
+        shell: bash
+        run: |
+          export PATH="$HOME/.phylum:$PATH"
+          phylum --help

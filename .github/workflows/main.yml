@@ -16,8 +16,4 @@ jobs:
           aut_threshold: 0.25
           phylum_username: ${{ secrets.PHYLUM_USER }}
           phylum_password: ${{ secrets.PHYLUM_PASS }}
-      - name: Run phylum
-        shell: bash
-        run: |
-          export PATH="$HOME/.phylum:$PATH"
-          phylum --help
+          pr_num: ${{ github.event.number }}

@@ -12,12 +12,14 @@ jobs:
       - uses: actions/checkout@v2
       - id: analyze-pr-test
       #uses: peterjmorgan/phylum-analyze-pr-action@master
-        uses: peterjmorgan/phylum-analyze-pr-action@master
+      #uses: peterjmorgan/phylum-analyze-pr-action@master
+        uses: phylum-dev/phylum-analyze-pr-action@1.2.0-rc1
         with:
           vul_threshold: 0.6
           mal_threshold: 0.6
           eng_threshold: 0.6
           lic_threshold: 0.6
           aut_threshold: 0.6
-          phylum_username: ${{ secrets.PHYLUM_USER }}
-          phylum_password: ${{ secrets.PHYLUM_PASS }}
+          phylum_token: ${{ secrets.PHYLUM_TOKEN }}
+          # phylum_username: ${{ secrets.PHYLUM_USER }}
+          # phylum_password: ${{ secrets.PHYLUM_PASS }}

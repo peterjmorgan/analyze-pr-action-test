@@ -11,12 +11,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - id: analyze-pr-test
-      uses: phylum-dev/phylum-analyze-pr-python-action@1.2.0-rc1
+        uses: phylum-dev/phylum-analyze-pr-python-action@1.2.0-rc1
         with:
           vul_threshold: 0.25
           mal_threshold: 0.25
           eng_threshold: 0.25
           lic_threshold: 0.25
           aut_threshold: 0.25
-          phylum_username: ${{ secrets.PHYLUM_USER }}
-          phylum_password: ${{ secrets.PHYLUM_PASS }}
+          # phylum_username: ${{ secrets.PHYLUM_USER }}
+          # phylum_password: ${{ secrets.PHYLUM_PASS }}
+          phylum_token: ${{ secrets.PHYLUM_TOKEN }}

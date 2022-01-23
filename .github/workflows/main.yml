@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - id: analyze-pr-test
-        uses: peterjmorgan/phylum-analyze-pr-python-action@master
+      uses: phylum-dev/phylum-analyze-pr-python-action@1.2.0-rc1
         with:
           vul_threshold: 0.25
           mal_threshold: 0.25

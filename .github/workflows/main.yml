@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - id: analyze-pr-test
-        uses: phylum-dev/phylum-analyze-pr-action@1.3-tmate
+        uses: phylum-dev/phylum-analyze-pr-action@1.4-WIP
         with:
           vul_threshold: 0.6
           mal_threshold: 0.6
@@ -19,3 +19,4 @@ jobs:
           lic_threshold: 0.6
           aut_threshold: 0.6
           phylum_token: ${{ secrets.PHYLUM_TOKEN }}
+          invoke_test_matrix: true

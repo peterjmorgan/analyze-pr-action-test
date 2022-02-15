@@ -1,3 +1,5 @@
 certifi==2021.10.8
 chardet==3.0.4
 idna==2.7
+urllib3==1.24.3
+requests==2.6.1
